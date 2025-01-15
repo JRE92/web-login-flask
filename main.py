@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from dbconnect import connect
 
 app = Flask(__name__)
 
@@ -17,7 +18,7 @@ def submit_form():
         
         # Process the data (e.g., print it)
         print(f"Received data: user - {user}, password - {password}")
-        
+        connect()
         # Optionally, you can send a response back to the client
         return "Form submitted successfully"
 
