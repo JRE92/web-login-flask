@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/style.css">
-    <script src="/static/js/script.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <form action="/user" method="post">
+    <h1>Create User</h1>
+    <form action="/create/usercreated" method="post">
         <input type="text" name="user" id="user"><br>
         <input type="password" name="pass" id="pass"><br>
-        <input type="submit" value="Login">
-    </form>
-    <!-- <button type="button"><a href="/create">Create user</a></button> -->
-     <form action="/create" method="get">
         <input type="submit" value="Create user">
-     </form>
+    </form>
 </body>
 </html>

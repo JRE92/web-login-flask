@@ -1,7 +1,6 @@
 import psycopg2
 
 def connect():
-    print("Connecting to database...")
     # Connection parameters
     host = "127.0.0.1"
     database = "users"
