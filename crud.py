@@ -5,7 +5,7 @@ def create(user, password):
     connection = connect()
     if connection:
         cursor = connection.cursor()
-        cursor.execute(f"INSERT INTO users1 (username, password) VALUES ('{user}', '{password}');")
+        cursor.execute(f"INSERT INTO users (username, password) VALUES ('{user}', '{password}');")
         connection.commit()
         cursor.close()
     else:
@@ -18,7 +18,7 @@ def read(user, password):
     print("reading database...")
     if connection:
         cursor = connection.cursor()
-        cursor.execute(f"SELECT * FROM users1 WHERE username='{user}' AND password ='{password}';")
+        cursor.execute(f"SELECT * FROM users WHERE username='{user}' AND password ='{password}';")
         sqlinjection = cursor.fetchone()
         cursor.close()
         if sqlinjection != None:
@@ -35,7 +35,7 @@ def update(olduser, newuser):
     connection = connect()
     if connection:
         cursor = connection.cursor()
-        cursor.execute(f"UPDATE users1 SET username = '{newuser}' WHERE username = '{olduser}';")
+        cursor.execute(f"UPDATE users SET username = '{newuser}' WHERE username = '{olduser}';")
         connection.commit()
         cursor.close()
     else:
@@ -46,7 +46,7 @@ def delete(user):
     connection = connect()
     if connection:
         cursor = connection.cursor()
-        cursor.execute(f"DELETE FROM users1 WHERE username = '{user}';")
+        cursor.execute(f"DELETE FROM users WHERE username = '{user}';")
         connection.commit()
         cursor.close()
     else:
@@ -58,7 +58,7 @@ def userexist(user):
     connection = connect()
     if connection:
         cursor = connection.cursor()
-        cursor.execute(f"SELECT username FROM users1 WHERE username='{user}';")
+        cursor.execute(f"SELECT username FROM users WHERE username='{user}';")
         sqlinjection = cursor.fetchone()
         cursor.close()
         if sqlinjection != None:

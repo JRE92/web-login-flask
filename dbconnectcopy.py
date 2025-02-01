@@ -3,10 +3,10 @@ import psycopg2
 def connect():
     # Connection parameters
     host = "127.0.0.1"
-    database = "users"
+    database = "jj"
     user = "jj"
     password = "1"
-    port="5433"
+    port="5434"
 
     try:
         # Establish connection

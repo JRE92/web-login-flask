@@ -57,5 +57,17 @@ def updateuserdone():
     update(olduser, newuser)
     return "user updated"
 
+# Route to delete a user
+@app.route('/user/delete')
+def deleteuser():
+    return render_template('deleteuser.html', user="user")
+
+@app.route('/user/delete/deleteduser', methods=['POST'])
+def deleteuserdone():
+    deleteuser = request.form['deleteuser']
+    # newuser = request.form['newuser']
+    delete(deleteuser)
+    return "user deleted"
+
 if __name__ == '__main__':
     app.run(debug=True)
