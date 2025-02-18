@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect
 from crud import *
 
 app = Flask(__name__)
@@ -19,14 +19,12 @@ def submit_form():
         # Process the data (e.g., print it)
         print(f"Received data: user - {user}, password - {password}")
         userstatus = read(user, password)
-        # Optionally, you can send a response back to the client
-        # return userstatus
-        # return "Form submitted successfully"
-
         if userstatus == True:
             return render_template('usercorrect.html' , user=user)
-        else:
+        elif userstatus == False:
             return render_template('userincorrect.html', user=user)
+        else:
+            return redirect(location='/error')
 
 # Route to create a user
 @app.route('/create')
@@ -68,6 +66,11 @@ def deleteuserdone():
     # newuser = request.form['newuser']
     delete(deleteuser)
     return "user deleted"
+
+# Route to handle errors
+@app.route('/error')
+def error():
+    return render_template('errordb.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

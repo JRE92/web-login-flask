@@ -1,5 +1,4 @@
-# import psycopg2
-from dbconnectcopy import connect
+from dbconnect import connect
 
 def create(user, password):
     connection = connect()
@@ -15,10 +14,9 @@ def create(user, password):
 def read(user, password):
     confirmation = True
     connection = connect()
-    print("reading database...")
     if connection:
         cursor = connection.cursor()
-        cursor.execute(f"SELECT * FROM users WHERE username='{user}' AND password ='{password}';")
+        cursor.execute(f"SELECT * FROM users WHERE username='{user}' AND password='{password}';")
         sqlinjection = cursor.fetchone()
         cursor.close()
         if sqlinjection != None:
@@ -27,7 +25,7 @@ def read(user, password):
             print("user not exist.")
             confirmation = False
     else:
-        print("Connection to database failed.")
+        return
     connection.close()
     return confirmation
 
