@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <script src="/static/js/script.js"></script>
     <title>Document</title>
 </head>
+
 <body>
-    <form action="/user" method="post">
-        <input type="text" name="user" id="user"><br>
-        <input type="password" name="pass" id="pass"><br>
-        <input type="submit" value="Login">
-    </form>
-    <!-- <button type="button"><a href="/create">Create user</a></button> -->
-     <form action="/create" method="get">
-        <input type="submit" value="Create user">
-     </form>
+    <div id="midle">
+        <form action="/user" method="post">
+            <input class="input is-link" type="text" placeholder="name" name="user" id="user"/><br>
+            <input class="input is-link" type="password" placeholder="pass" name="pass" id="pass"/><br>
+            <input id="buttonlogin" class="button" type="submit" value="Login">
+        </form>
+        <form action="/create" method="get">
+            <input id="buttoncreate" class="button" type="submit" value="Create user">
+        </form>
+    </div>
+
 </body>
+
 </html>

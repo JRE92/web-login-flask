@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Update User {{user}}</h1>
+    <h1 class="title is-2">Update User {{user}}</h1>
     <form action="/user/update/userupdated" method="post">
-        <input type="text" name="olduser" id="olduser" value="{{user}}"><br>
-        <input type="text" name="newuser" id="newuser" value="{{user}}"><br>
-        <!-- <input type="password" name="pass" id="pass" value="{{pass}}"><br> -->
-        <input type="submit" value="Update user">
+        <input class="input is-link" type="text" placeholder="name" name="olduser" id="olduser" value="{{user}}" /><br>
+        <input class="input is-link" type="text" placeholder="name" name="newuser" id="newuser" value="{{user}}" /><br>
+        <input class="button" type="submit" value="Update user">
     </form>
 </body>
+
 </html>

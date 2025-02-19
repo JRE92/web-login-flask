@@ -1,5 +1,20 @@
-body{
+/* body{
     background-color: black;
     color: white;
     text-align: center;
+} */
+
+#midle {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 25%;
+}
+#buttonlogin{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+#buttoncreate{
+    padding-left: 28px;
+    padding-right: 28px;
 }

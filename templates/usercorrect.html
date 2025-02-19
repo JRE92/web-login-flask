@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
     <title>Document</title>
 </head>
+
 <body>
-    <h1>user correct {{user}}</h1>
+    <h1 class="title is-2">user correct {{user}}</h1>
     <form action="/user/update" method="get">
-        <input type="submit" value="Update user">
+        <input class="button" type="submit" value="Update user">
     </form>
     <br>
     <form action="/user/delete" method="get">
-        <input type="submit" value="Delete user">
+        <input class="button" type="submit" value="Delete user">
     </form>
 </body>
+
 </html>
